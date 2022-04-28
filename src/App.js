@@ -18,7 +18,7 @@ function App() {
           <Route path='/' element={<Index />} />
           <Route path='/new' element={<NewClient />} />
           <Route path='/:id' element={<Show />} />
-          {/* <Route path='/:id/newaccount' element={<NewAccount />} /> */}
+          <Route path='/:id/newaccount' element={<NewAccount />} />
           <Route path='/:id/edit' element={<Edit />} />
         </Routes>
       </Router>

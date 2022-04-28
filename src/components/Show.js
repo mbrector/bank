@@ -1,24 +1,43 @@
 import {React, useState, useEffect} from 'react'
 import {useNavigate, useParams} from "react-router-dom"
+import { getAccounts } from '../services/accounts-api'
 import {getClient, deleteClient} from '../services/clients-api'
+
 
 function Show() {
     const navigate = useNavigate()
     const {id} = useParams()
-    const [customer, setCustomer] = useState({})
+    const [customer, setCustomer] = useState([])
+    const [data, setData] = useState([])
+
     useEffect(() => {
         getClient(id)
         .then(res => setCustomer(res.data))
+        getAccounts()
+        .then(res => setData(res.data))
     }, [])
 
         const deleteTheClient = () => {
             deleteClient(id)
             navigate('/')
         }
-
   return (
     <div>
         <h2>{customer.firstName} {customer.lastName}</h2><br />
+
+
+        <h3>{data.map((account, i) => {
+            return(<div>
+                        {customer._id==account.clientID?
+                            <h2 key = {i}>${account.checkingAccount}</h2>   
+                            :null}
+                            </div>             
+                    )
+                })}
+        </h3>
+
+
+
         <button onClick={() => {navigate(`/${id}/newaccount`)}}>Add Account</button>
         <button onClick={() => {navigate(`/${id}/Edit`)}}>Edit Client</button>
         <button onClick={deleteTheClient}>Remove Client</button> 
