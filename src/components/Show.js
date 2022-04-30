@@ -32,7 +32,6 @@ function Show() {
                         <div key = {i}>
                             {account.accountType}<br />               
                             ${account.amount}<br />
-                            {account.interestRate}%<br />
                             xxxxx{account.accountNumber}<br /><br />
                         </div>
                         :null}

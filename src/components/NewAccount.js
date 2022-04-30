@@ -10,7 +10,7 @@ function NewAccount() {
     const createTheAccount = event => {
         const clientNumber = `${id}`
         event.preventDefault()
-        let addition = {clientID: clientNumber, accountType: event.target.accountType.value, amount: event.target.amount.value, interestRate: event.target.interestRate.value, accountNumber: event.target.accountNumber.value}
+        let addition = {clientID: clientNumber, accountType: event.target.accountType.value, amount: event.target.amount.value, accountNumber: event.target.accountNumber.value}
         createAccount(addition)
         navigate(`/${id}`)
     }
@@ -21,7 +21,6 @@ function NewAccount() {
             <form onSubmit={createTheAccount}>
             Account Type: <input type='text' name="accountType" />     
             Amount: <input type='number' name="amount" />
-            Interest Rate: <input type='number' name="interestRate" />
             Account Number: <input type='number' name="accountNumber" />
             <input type='submit' />
         </form>
