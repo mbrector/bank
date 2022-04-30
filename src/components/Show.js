@@ -26,15 +26,21 @@ function Show() {
         <h2>{customer.firstName} {customer.lastName}</h2><br />
 
 
-        <h3>{data.map((account, i) => {
+        {data.map((account, i) => {
             return(<div>
-                        {customer._id==account.clientID?
-                            <h2 key = {i}>${account.checkingAccount}</h2>   
-                            :null}
-                            </div>             
+                        {customer._id==data[i].clientID?
+                        <div key = {i}>
+                            {account.accountType}<br />               
+                            ${account.amount}<br />
+                            {account.interestRate}%<br />
+                            xxxxx{account.accountNumber}<br /><br />
+                        </div>
+                        :null}
+                    </div>
+
                     )
                 })}
-        </h3>
+        
 
 
 
