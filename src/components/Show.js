@@ -27,12 +27,12 @@ function Show() {
 
 
         {data.map((account, i) => {
-            return(<div>
+            return(<div key = {i}>
                         {customer._id==data[i].clientID?
-                        <div key = {i}>
+                        <div>
                             {account.accountType}<br />               
                             ${account.amount}<br />
-                            xxxxx{account.accountNumber}<br /><br />
+                            xxxxxx{account.accountNumber}<br /><br />
                         </div>
                         :null}
                     </div>

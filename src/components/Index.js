@@ -12,15 +12,15 @@ const [data, setData] = useState([])
     return (
         <div>
             <h1>Client List:</h1>
-            <ul className= "clients">
+            <div className= "clients">
                 {data.map((client, i) => {
                     return(
-                        <li key = {i}>
-                            <h2><a href = {`/${client._id}`}>{client.firstName} {client.lastName}</a></h2>
-                        </li>               
+                        <h2  key = {i}className= "client">
+                            <a href = {`/${client._id}`}>{client.firstName} {client.lastName}</a>
+                        </h2>               
                     )
                 })}
-            </ul>
+            </div>
         </div>
     )
 }
