@@ -18,8 +18,8 @@ function Show() {
     }, [])
 
     data.sort((a, b)=>{
-        const nameA = a.accountType
-        const nameB = b.ccountType
+        const nameA = a.accountType.toUpperCase()
+        const nameB = b.accountType.toUpperCase()
         if (nameA < nameB) {
             return -1
         }
