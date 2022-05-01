@@ -17,6 +17,18 @@ function Show() {
         .then(res => setData(res.data))
     }, [])
 
+    data.sort((a, b)=>{
+        const nameA = a.accountType
+        const nameB = b.ccountType
+        if (nameA < nameB) {
+            return -1
+        }
+        if (nameA > nameB) {
+            return 1
+        }
+        return 0
+    })    
+
         const deleteTheClient = () => {
             deleteClient(id)
             navigate('/')
@@ -42,7 +54,7 @@ function Show() {
         
 
 
-
+        <button onClick={() => {navigate(`/${id}/transfer`)}}>Transfer</button>
         <button onClick={() => {navigate(`/${id}/newaccount`)}}>Add Account</button>
         <button onClick={() => {navigate(`/${id}/Edit`)}}>Edit Client</button>
         <button onClick={deleteTheClient}>Remove Client</button> 

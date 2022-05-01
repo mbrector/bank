@@ -3,17 +3,8 @@ html{
     background-color: #d9d9d9;
     text-align: center
 }
-.clients{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.client{
-    border: solid 5px #1e394b;
-    background-color: #3c6e71;
-    text-align: center;
-    padding: 10px;
-    margin: 10%;
-}
+
+
 a, h1, h2, h3{
     color: #353535;
 }

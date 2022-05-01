@@ -7,7 +7,18 @@ const [data, setData] = useState([])
         getClients()
         .then(res => setData(res.data))
     }, [])
-    console.log(data)
+    
+data.sort((a, b)=>{
+    const nameA = a.lastName.toUpperCase()
+    const nameB = b.lastName.toUpperCase()
+    if (nameA < nameB) {
+        return -1
+    }
+    if (nameA > nameB) {
+        return 1
+    }
+    return 0
+})
 
     return (
         <div>
