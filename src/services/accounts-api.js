@@ -1,5 +1,5 @@
 import axios from "axios"
-const URL = 'http://localhost:3001/accounts/'
+const URL = 'https://mrbank-api.herokuapp.com/accounts/'
 
 export const getAccounts = () => {
     const response = axios.get(URL)
