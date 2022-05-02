@@ -1,10 +1,46 @@
 
 html{
     background-color: #d9d9d9;
-    text-align: center
+    text-align: center;
+}
+
+img{
+    position: absolute;
+    z-index: -5;
+    opacity: .15;
+    margin-top: -1%;
+    margin-left: -36.25%;
+    height: 1000px;
+}
+
+.clients{
+    color: black;
+    font-size: 20px;
 }
 
 
 a, h1, h2, h3{
     color: #353535;
+}
+
+.accounts{
+    font-size: 18px;
+    
+}
+
+.nav{
+    font-size: 22px;
+    background-color: darkcyan;
+    color:#d9d9d9
+}
+
+.allAccounts{
+    border: 10px groove rgb(74, 94, 95);
+    background-color: rgb(102, 167, 167);
+    margin-left: 37%;
+    margin-right: 37%;
+}
+
+button{
+    background-color: cadetblue;
 }

@@ -38,11 +38,11 @@ function Show() {
         return (
             <div>
         <h2>{customer.firstName} {customer.lastName}</h2><br />
-
+            <div  className= 'allAccounts'>
         {data.map((account, i) => {
             return(<div key = {i}>
                         {customer._id==data[i].clientID?
-                        <div>
+                        <div className="accounts" >
                             {console.log(total)}
                             {account.accountType}<br />               
                             ${account.amount}<br />
@@ -53,11 +53,12 @@ function Show() {
                     </div>
                     )
                 })}
-        <button onClick={() => {navigate(`/${id}/transfer`)}}>Transfer</button>
-        <button onClick={() => {navigate(`/${id}/newaccount`)}}>Add Account</button>
-        <button onClick={() => {navigate(`/${id}/Edit`)}}>Edit Client</button>
+                <h2>${total}</h2>
+                </div><br />
+        <button onClick={() => {navigate(`/${id}/transfer`)}}>Transfer</button>&nbsp;&nbsp;&nbsp;
+        <button onClick={() => {navigate(`/${id}/newaccount`)}}>Add Account</button>&nbsp;&nbsp;&nbsp;
+        <button onClick={() => {navigate(`/${id}/Edit`)}}>Edit Client</button>&nbsp;&nbsp;&nbsp;
         <button onClick={deleteTheClient}>Remove Client</button> 
-        <h2>${total}</h2>
     </div>
   )
 }

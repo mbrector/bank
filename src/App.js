@@ -11,9 +11,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <nav>
-        <Link to="/">Home</Link><br />
-        <Link to="/new">New Client</Link>
+        <nav className='nav'>
+        <br />
+        <Link className='nav' to="/">Home</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link className='nav' to="/new">New Client</Link>
+        <br /><br />
         </nav>
         <Routes>
           <Route path='/' element={<Index />} />

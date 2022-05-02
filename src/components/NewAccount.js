@@ -1,11 +1,18 @@
-import {React} from 'react'
+import {React, useState, useEffect} from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { createAccount } from '../services/accounts-api'
+import { getClient } from '../services/clients-api'
 
 
 function NewAccount() {
     const { id } = useParams()
     const navigate = useNavigate()
+    const [customer, setCustomer] = useState([])
+
+    useEffect(() => {
+        getClient(id)
+        .then(res => setCustomer(res.data))  
+    }, [])
     
     const createTheAccount = event => {
         const clientNumber = `${id}`
@@ -18,17 +25,21 @@ function NewAccount() {
 
     return (
         <div>
+            <h2>{customer.firstName} {customer.lastName}</h2><br />
+        <div className='allAccounts'>
             
             <form onSubmit={createTheAccount}>
-                <label>Account Type:</label>
+                <br />
+                <label><h3>Account Type:</h3></label>
                     <select name="accountType">
                     <option value="Checking">Checking</option>
                     <option value="Savings">Savings</option>
                     <option value="Money Market">Money Market</option>
                     </select>
-            Amount: <input type='number' name="amount" />
-                    <input type='submit' />
+                    <h3>Amount:</h3> <input type='number' name="amount" /><br />
+                    <input type='submit' /><br /><br /><br />
             </form>
+        </div>
         </div>
     )
 }
