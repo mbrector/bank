@@ -36,8 +36,9 @@ function NewAccount() {
                     <option value="Savings">Savings</option>
                     <option value="Money Market">Money Market</option>
                     </select>
-                    <h3>Amount:</h3> <input type='number' name="amount" /><br />
-                    <input type='submit' /><br /><br /><br />
+                    <h3>Amount:</h3> <input type='number' name="amount" /><br /><br />
+                    <input className="button" type='submit' /><br /><br /><br />
+                    <button className='button' onClick={() => {navigate(`/${id}`)}}>Back</button><br /><br />
             </form>
         </div>
         </div>

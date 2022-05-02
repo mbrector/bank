@@ -55,10 +55,11 @@ function Show() {
                 })}
                 <h2>${total}</h2>
                 </div><br />
-        <button onClick={() => {navigate(`/${id}/transfer`)}}>Transfer</button>&nbsp;&nbsp;&nbsp;
-        <button onClick={() => {navigate(`/${id}/newaccount`)}}>Add Account</button>&nbsp;&nbsp;&nbsp;
-        <button onClick={() => {navigate(`/${id}/Edit`)}}>Edit Client</button>&nbsp;&nbsp;&nbsp;
-        <button onClick={deleteTheClient}>Remove Client</button> 
+        <button onClick={() => {navigate(`/${id}/editaccount`)}}>Deposit/Withdraw</button>&nbsp;&nbsp;
+        <button onClick={() => {navigate(`/${id}/transfer`)}}>Transfer</button>&nbsp;&nbsp;
+        <button onClick={() => {navigate(`/${id}/newaccount`)}}>Add Account</button>&nbsp;&nbsp;
+        <button onClick={() => {navigate(`/${id}/edit`)}}>Edit Client</button>&nbsp;&nbsp;
+        <button onClick={deleteTheClient}>Remove Client</button>
     </div>
   )
 }

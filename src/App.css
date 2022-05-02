@@ -44,3 +44,7 @@ a, h1, h2, h3{
 button{
     background-color: cadetblue;
 }
+
+.button{
+    background-color: #d9d9d9;
+}

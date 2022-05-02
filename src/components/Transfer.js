@@ -1,16 +1,20 @@
 import { React, useState, useEffect } from 'react'
 import { getAccounts, editAccount } from '../services/accounts-api'
 import {useNavigate, useParams} from "react-router-dom"
-
+import { getClient } from '../services/clients-api'
 
 
 function Transfer() {
     const navigate = useNavigate()
     const {id} = useParams()
     const [data, setData] = useState([])
+    const [customer, setCustomer] = useState([])
+
     useEffect(() => {
         getAccounts()
         .then(res => setData(res.data))
+        getClient(id)
+        .then(res => setCustomer(res.data)) 
     }, [])
     
     const transferAccounts = event => {
@@ -28,7 +32,9 @@ function Transfer() {
   return (
    
 <form onSubmit={transferAccounts}><br /><br />
-                <h3>Amount: </h3><input name="amount" type="number"></input>
+<div><h2>{customer.firstName} {customer.lastName}</h2><br />
+    <div className='allAccounts'>
+                <h3>Transfer Amount: </h3><input name="amount" type="number"></input>
                 <label><h3>From Account:</h3></label>
                     <select name="account1">
                         {data.map((account, i) => {
@@ -51,7 +57,10 @@ function Transfer() {
                         )}
                         )}
                     </select><br /><br />
-                    <input type='submit' />
+                    <input type='submit' /><br /><br />
+                    <button className='button' onClick={() => {navigate(`/${id}`)}}>Back</button><br /><br />
+                    </div>
+                    </div>
             </form>
 
   )

@@ -20,13 +20,15 @@ function Edit() {
         navigate(`/${id}`)
     }
   return (
-    <div>
+      <div><br /><br />
+    <div className='allAccounts'>
         <h2>Edit Client Details</h2>
         <form onSubmit={editTheClient}>
-            First Name: <input type={'text'} name="firstName" defaultValue={data.firstName}/>
-            Last Name: <input type={'text'} name="lastName" defaultValue={data.lastName}/>
-            <input type='submit' />
+            First Name: <input type={'text'} name="firstName" defaultValue={data.firstName}/><br /><br />
+            Last Name: <input type={'text'} name="lastName" defaultValue={data.lastName}/><br /><br />
+            <input type='submit' /><br /><br />
         </form>
+    </div>
     </div>
   )
 }
