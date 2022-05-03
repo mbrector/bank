@@ -25,9 +25,10 @@ function DeleteAccount() {
         navigate(`/${id}`)
     }
   return (
-    <div><form onSubmit={deleteTheAccount}>
-    <h2>{customer.firstName} {customer.lastName}</h2>
-        <div className='allAccounts'>
+    <div>
+        <form onSubmit={deleteTheAccount}>
+            <h2>{customer.firstName} {customer.lastName}</h2>
+            <div className='allAccounts'>
                 <label><h3>Account:</h3></label>
                     <select name="account">
                         {data.map((account, i) => {
@@ -36,15 +37,14 @@ function DeleteAccount() {
                             <option value={ `${account._id}` }>${account.amount} -x{account.accountNumber} {account.accountType}
                             </option>
                             :null}</>
-                        )}
+                            )}
                         )}
                     </select><br /><br />
-                    <input type="submit" value="Delete Account"></input><br /><br />
-                    <button className='button' onClick={() => {navigate(`/${id}`)}}>Back</button><br /><br />
-                    
-                    </div>
-                    </form>
-                    </div>
+                <input type="submit" value="Delete Account"></input><br /><br />
+                <button className='button' onClick={() => {navigate(`/${id}`)}}>Back</button><br /><br />
+            </div>
+        </form>
+    </div>
   )
 }
 
