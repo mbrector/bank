@@ -20,8 +20,8 @@ function EditAccount() {
 
     const transaction = event => {
         event.preventDefault()
-        const depositAmount = Number(event.target.amount.value)
-        const newAmount1 = Number(event.target.account.value.split(" ")[0]) + depositAmount
+        const transactionAmount = Number(event.target.amount.value)
+        const newAmount1 = Number(event.target.account.value.split(" ")[0]) + transactionAmount
         const updated1 = {amount: newAmount1}
         editAccount(event.target.account.value.split(" ")[1], updated1)
         navigate(`/${id}`)   
