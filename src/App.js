@@ -7,6 +7,7 @@ import Edit from './components/Edit'
 import NewAccount from './components/NewAccount'
 import Transfer from './components/Transfer'
 import EditAccount from './components/EditAccount'
+import DeleteAccount from './components/DeleteAccount'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/:id/edit' element={<Edit />} />
           <Route path='/:id/transfer' element={<Transfer />} />
           <Route path='/:id/editaccount' element={<EditAccount />} />
+          <Route path='/:id/delete' element={<DeleteAccount />} />
         </Routes>
       </Router>
     </div>

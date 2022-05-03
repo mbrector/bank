@@ -43,7 +43,6 @@ function Show() {
             return(<div key = {i}>
                         {customer._id==data[i].clientID?
                         <div className="accounts" >
-                            {console.log(total)}
                             {account.accountType}<br />               
                             ${account.amount}<br />
                             xxxxxx{account.accountNumber}<br /><br />
